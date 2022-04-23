@@ -1,12 +1,15 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navbar from './components/Navbar';
+import ItemListContainer from "./components/itemListContainer";
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Techverse</h1>
-      </header>
+    <div className='bg-neutral-100'>
+      <Navbar></Navbar>
+      <ItemListContainer greetings="Bienvenidos a la Página!"></ItemListContainer>
     </div>
   );
 }
