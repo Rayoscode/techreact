@@ -7,7 +7,7 @@ import ItemListContainer from "./components/itemListContainer";
 function App() {
 
   return (
-    <div className='bg-neutral-100'>
+    <div className='font-mono antialiased font-semibold bg-gray-900'>
       <Navbar></Navbar>
       <ItemListContainer greetings="Bienvenidos a la Página!"></ItemListContainer>
     </div>

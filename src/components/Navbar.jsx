@@ -1,6 +1,6 @@
 import Cartwidget from "./cartWidget";
 
-const liStyle ="p-4 cursor-pointer";
+const liStyle ="p-2 pl-3 pr-3 ml-2 mr-2 cursor-pointer hover:bg-zinc-100 hover:text-zinc-900 rounded-2xl transition-colors";
 function Navbar () {
     return(
     <>
