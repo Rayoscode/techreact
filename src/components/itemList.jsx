@@ -1,33 +1,17 @@
-import { useEffect, useState } from "react";
-import {Procesadores as ProcesadoresData} from "../data/procesadoresData"
-import Item from "./item"
 
-const Itemlist= () => {
-const [proc, setProc] = useState([]);
-const [cargado, setCargado] = useState(true)
-    useEffect(() => {
-        const getProcesadores = new Promise ((resolve,reject) => {
-            setTimeout( () => { resolve(ProcesadoresData)
-                                setCargado(false)},1500) ;
-                            })
-        getProcesadores.then( (result) => {
-            setProc(result);
-        });
-    
-    }, []);
-    
-    if(cargado){
-        return(<p className="bg-zinc-100 w-1/2 p-2 m-3 rounded-2xl"> Cargando...</p>);
-        
-    } else {
-        return(
-            
+import Item from "./item"
+import { Link } from "react-router-dom";
+
+const Itemlist = (prop) => {
+
+    return (
         <div className="bg-zinc-100 w-1/2 p-2 m-3 rounded-2xl">
-            <h2 className="m-1 p-2 text-2xl ">Lista de Procesadores</h2>
-            {proc.map( Procesador => <Item key={Procesador.id} ProcesadoresData={Procesador} />)}
-        </div>);
-    }
-    
+
+            <h2 className="m-1 p-2 text-2xl">Lista de productos {prop.type}</h2>
+            {prop.data.map((Producto)=> (<Link to={`/item/${Producto.id}`}> <Item key={Producto.id} ProductoData={Producto}></Item></Link>))} 
+        </div>
+    )
+
 }
 
 export default Itemlist;
