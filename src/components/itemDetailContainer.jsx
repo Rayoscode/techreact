@@ -14,8 +14,6 @@ const ItemDetailContainer = () =>{
         setTimeout(()=>{  
             getProductos.then((response)=>{response.json()
             .then((data)=>{
-                console.log(prodId)
-                console.log(data);
                 let prod = data.productos.find((valor)=>{ return valor.id === prodId});
                 if(prod === undefined){
                     console.log("Error");
@@ -27,7 +25,7 @@ const ItemDetailContainer = () =>{
             })})
         },1500);
     
-    }, []);
+    }, [Producto]);
 
     
 

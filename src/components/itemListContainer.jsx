@@ -8,14 +8,14 @@ const ItemListContainer = (prop) =>{
     const cartStyle = "bg-gradient-to-r from-sky-500 to-indigo-500 p-4 m-2 text-center text-slate-100 font-medium rounded-xl";
     const [Productos, setProductos] = useState([]);
     const [cargado, setCargado] = useState(true)
-    
+
+
+
     useEffect(() => {
-        
         const getProductos = fetch("data/datosProductos.json");
-        setTimeout(()=>{  
             getProductos.then((response)=>{response.json()
             .then((data)=>{
-                
+                setTimeout(()=>{ 
                 if(prop.type==="informaticos"){
                     setProductos(data.productos.filter( prod => prod.categoria === "informaticos"));
                 } else if (prop.type==="electronicos") {
@@ -25,10 +25,10 @@ const ItemListContainer = (prop) =>{
                 }
                 
                 setCargado(false);
-            })})
-        },1500);
+            },1500)})})
+        }
     
-    }, [Productos]);
+    , [Productos]);
 
 
 
