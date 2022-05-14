@@ -1,5 +1,7 @@
 {
-
+    "type": [{"name":"electronicos","id":1},{"name":"informaticos","id":2}],
+    "categoryProduct":["Procesador","Memoria RAM","Placa de Video","Motherboard","HDD","SSD","Gabinete","Fuente de Alimentacion"],
+    "categoryMarca":["Intel","AMD","Nvidia","Kingston","PNY XLR8","Patriot","Evga","Seagate","Western Digital","Gigabyte"],
     "productos":[
         {
             "modelo":"",
@@ -264,7 +266,7 @@
         },
         {
             "modelo":"Radeon RX 6900 XT",
-            "marca":"AMD Gigabyte",
+            "marca":"Gigabyte",
             "id":"I-0013",
             "categoria":"informaticos",
             "producto":"Placa de Video",
