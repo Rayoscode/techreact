@@ -1,4 +1,4 @@
-import { createContext ,useState,Children } from "react";
+import { createContext ,useState, Children } from "react";
 
 
 
@@ -26,13 +26,13 @@ const CartProvider  = ({children}) => {
             if (newItem){
                 CurrenCartState.push({Item,Cantidad});
             }
+            return CurrenCartState;
         })
     }
 
     const deleteFromCart = (ItemId ) =>{
         setCart ((CurrentCartState)=>{
-            let i = CurrentCartState.findIndex((itemCart)=>itemCart.item.id === ItemId)
-            i === -1 ? CurrentCartState.splice(i,1) : console.log("Error: No se encontro item a eleminar"); 
+            return CurrentCartState.filter((itemCart)=> itemCart.Item.id !== ItemId );
         })
     }
 

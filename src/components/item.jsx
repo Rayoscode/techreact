@@ -1,11 +1,21 @@
 
 const Item = ({ProductoData}) =>{
 
-    
+    const itemDataStyle ="";
+    const imgItemStyle="w-80 h-80 block";
+
     return(
-        <p className="m-1 my-2 px-1 pr-2 border-solid border-slate-900 shadow "> 
-            <span>{ProductoData.producto} {ProductoData.modelo}</span> {ProductoData.marca} 
-        </p>
+        <>
+            <div className="container rounded-xl w-96 h-96 ">
+                <img src={ProductoData.imagen} className={imgItemStyle}></img>
+                <div> 
+                    <p className={itemDataStyle}>{ProductoData.producto} </p>
+                    <p className={itemDataStyle}>{ProductoData.modelo}</p>
+                    <p className={itemDataStyle}>{ProductoData.precio}</p>
+                </div>
+                
+            </div>
+        </>
     )
     
 }
