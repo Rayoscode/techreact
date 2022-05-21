@@ -14,7 +14,7 @@ const ItemListContainer = () =>{
     useEffect(() => {
         setCargado(true);
         const storage = getFirestore();
-        const colection = "pjE54LMIY2LcTa1JIHA2"
+        const colection = COLLECTIONID;
         const ProductosDoc = doc(storage,'CategoriasTipo',colection);
         getDoc(ProductosDoc).then((res)=>{
             const data = res.data();
