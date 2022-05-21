@@ -14,7 +14,7 @@ const ItemListContainer = () =>{
     useEffect(() => {
         setCargado(true);
         const storage = getFirestore();
-        const colection = COLLECTIONID;
+        const colection = "pjE54LMIY2LcTa1JIHA2";
         const ProductosDoc = doc(storage,'CategoriasTipo',colection);
         getDoc(ProductosDoc).then((res)=>{
             const data = res.data();
@@ -27,13 +27,7 @@ const ItemListContainer = () =>{
                 }
                 setCargado(false);
         })
-        // .then((dataBlob)=>{ console.log(dataBlob)})
-        // setTimeout(()=>{
-        //     getProductos.then((response)=>{setCargado(true);response.json()
-        //     .then((data)=>{
-                
-        //     })})
-        // },2000);
+       
         },[typeId]);
     
 

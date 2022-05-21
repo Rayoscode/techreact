@@ -11,7 +11,7 @@ function Navbar () {
     const [LoadType, setLoadType] = useState(true);
     useEffect(()=>{
         const storage = getFirestore();
-        const colection = CATEGORIESID;
+        const colection = "ufQkOb0s6CTTPjMLoy04";
         const ProductosDoc = doc(storage,'CategoriasTipo',colection);
         getDoc(ProductosDoc).then((res)=>{
             const data = res.data();
