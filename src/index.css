@@ -15,3 +15,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ulHija {
+    display:none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 500px;
+    height: 200px;
+    
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: white 4px solid;
+    box-shadow: black 0px 0px 6px;
+}
+
+.ulHija {
+  position: absolute;
+}
+
+.selectedCat:hover .ulHija{
+
+  display: flex;
+  top :80px;
+  color:white;
+  background-color: rgb(31 41 55);
+}
+

@@ -42,7 +42,7 @@ const ItemListContainer = () =>{
             </>)
             :
             (<> 
-                <div className="bg-zinc-100 container p-2 m-3 rounded-2xl"> 
+                <div className="bg-zinc-100 w-100 p-2 m-3 rounded-2xl"> 
                     <h2 className="m-1 p-2 text-2xl">Lista de productos {typeId}</h2>
                     <Itemlist data={Productos} type={typeId}/>
 
