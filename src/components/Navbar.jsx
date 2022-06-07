@@ -37,7 +37,7 @@ function Navbar () {
                 </>)
                 :
                 (<>
-                    {Data.map((Dato)=>( <li   className={liStyleCat} > <Link  to={`/productos/${Dato}` }><p>{Dato} </p></Link>  <CategoriesList className="ListaHija" category={Dato}/> </li>))}
+                    {Data.map((Dato)=>( <li   className={liStyleCat} > <Link to={`/productos/${Dato}` }><p>{Dato} </p></Link>  <CategoriesList className="ListaHija" category={Dato}/> </li>))}
                 </>)
 
                 }

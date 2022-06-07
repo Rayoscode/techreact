@@ -32,12 +32,20 @@ code {
 .ulHija {
   position: absolute;
 }
+.ulHija{
+margin-top: 20px;
+  color: white;
+  background-color: rgb(31 41 55);
+}
 
 .selectedCat:hover .ulHija{
 
   display: flex;
-  top :80px;
-  color:white;
-  background-color: rgb(31 41 55);
+  
+}
+
+.ulHija:hover{
+  display: flex;
+  
 }
 

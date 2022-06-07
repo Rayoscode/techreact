@@ -12,7 +12,7 @@ const ItemCount = ( prop ) => {
     <div>
       <div className={numberInputStyle}>
         <label for="cantidad">Cantidad:</label>
-        <input type="number" name='cantidad'  onChange={(e)=>{setCantidad(e.target.value)}} min={1} max={prop.item.stock}></input>
+        <input type="number" name='cantidad' required={true}  onChange={(e)=>{setCantidad(e.target.value)}} min={1} max={prop.item.stock}></input>
 
       </div>
         <button className={buttonAddStyle} onClick={()=>{ addToCart(prop.item,Cantidad); prop.eventHandler();}}> Agregar al carro</button>

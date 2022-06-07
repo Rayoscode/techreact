@@ -34,7 +34,7 @@ const ItemDetailContainer = () =>{
 
     return(
         
-        <div className="bg-zinc-100 m-10 rounded-2xl">
+        <div>
             { Load ?
             (<div> Cargando....</div>) 
             :

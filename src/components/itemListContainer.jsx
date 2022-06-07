@@ -1,15 +1,15 @@
 import Itemlist from "./itemList";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
+
 
 
 const ItemListContainer = () =>{
 
     const [Productos, setProductos] = useState([]);
     const [cargado, setCargado] = useState(true)
-    const {typeId} = useParams();
-
+    const {typeId, categoryId} = useParams();
 
     useEffect(() => {
         setCargado(true);
@@ -18,17 +18,19 @@ const ItemListContainer = () =>{
         const ProductosDoc = doc(storage,'CategoriasTipo',colection);
         getDoc(ProductosDoc).then((res)=>{
             const data = res.data();
-            if(typeId==="informaticos"){
-                    setProductos(data.Productos.filter( prod => prod.categoria === "informaticos"));
-                } else if (typeId==="electronicos") {
-                    setProductos(data.Productos.filter( prod => prod.categoria === "electronicos"));
-                } else{
-                    setProductos(data.Productos); // Temporalmente se muestra en el inicio una lista con todos los productos
+            console.log(categoryId);
+            if(typeId !== undefined){
+                if(categoryId !== undefined){
+                    setProductos(data.Productos.filter( prod => prod.categoriaFilter === categoryId));
+                } else {
+                    setProductos(data.Productos.filter( prod => prod.categoria === typeId));
                 }
-                setCargado(false);
+            } else {
+                setProductos(data.Productos); 
+            }
+            setCargado(false);
         })
-       
-        },[typeId]);
+        },[typeId,categoryId]);
     
 
 
